@@ -15,6 +15,11 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnCloseModal = document.querySelector('.modal__close');
+const btnOpenModal = document.querySelector('.btn--info');
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -109,3 +114,25 @@ btnHold.addEventListener('click', function () {
 
 // New game
 btnNew.addEventListener('click', init);
+
+// Modal
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnOpenModal.addEventListener('click', openModal);
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});

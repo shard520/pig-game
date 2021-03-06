@@ -28,9 +28,36 @@
 
       <img src="./img/dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--info">❔</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
     </main>
+    <div class="modal hidden">
+      <button class="btn modal__close">✖</button>
+      <h2 class="modal__heading">Instructions</h2>
+      <p class="modal__text">
+        Each turn, a player repeatedly rolls a die until either a 1 is rolled or
+        the player decides to "hold":
+      </p>
+      <ul class="modal__list">
+        <li class="modal__list-item">
+          If the player rolls a 1, they score nothing and it becomes the next
+          player's turn.
+        </li>
+        <li class="modal__list-item">
+          If the player rolls any other number, it is added to their turn total
+          and the player's turn continues.
+        </li>
+        <li class="modal__list-item">
+          If a player chooses to "hold", their turn total is added to their
+          score, and it becomes the next player's turn.
+        </li>
+      </ul>
+      <p class="modal__text">
+        The first player to score 100 or more points wins.
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
     <script src="script.js"></script>
   </body>
 </html>
