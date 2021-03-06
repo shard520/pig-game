@@ -159,8 +159,8 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -70%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
@@ -205,7 +205,7 @@ main {
 
 .modal__list-item {
   font-size: 1.5rem;
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 .modal__list-item:not(:last-child) {
@@ -234,4 +234,102 @@ main {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+
+  main {
+    width: unset;
+    height: unset;
+    flex-direction: column;
+  }
+
+  .player {
+    padding: 9rem 5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .name {
+    width: 60%;
+  }
+
+  .score {
+    padding: 1rem 0;
+    flex: 55%;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 0%;
+    margin-left: -3rem;
+  }
+
+  .current {
+    width: 45%;
+  }
+
+  .current-label {
+    margin-bottom: 0;
+  }
+
+  .dice {
+    transform: translate(-50%, -50%);
+  }
+
+  .btn {
+    transform: unset;
+  }
+
+  .btn:active {
+    transform: translateY(3px);
+  }
+
+  .btn--new {
+    top: 3%;
+    left: 5rem;
+  }
+  .btn--info {
+    top: 3%;
+    left: unset;
+    right: 5rem;
+  }
+  .btn--roll {
+    top: unset;
+    bottom: 3%;
+    left: 5rem;
+  }
+  .btn--hold {
+    top: unset;
+    bottom: 3%;
+    left: unset;
+    right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .btn--new,
+  .btn--roll {
+    left: 3rem;
+  }
+
+  .btn--info,
+  .btn--hold {
+    right: 3rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  html {
+    font-size: 40%;
+  }
 }

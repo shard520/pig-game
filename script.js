@@ -21,9 +21,9 @@ const btnOpenModal = document.querySelector('.btn--info');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 
+// Initialise game
 let scores, currentScore, activePlayer, playing;
 
-// Initialise game
 const init = function () {
   // Game variables
   scores = [0, 0];
@@ -41,8 +41,6 @@ const init = function () {
   score1El.textContent = 0;
   current0El.textContent = 0;
   current1El.textContent = 0;
-
-  // return scores, currentScore, activePlayer, playing;
 };
 
 init();
